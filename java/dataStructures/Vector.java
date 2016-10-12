@@ -55,4 +55,13 @@ public class Vector<T> {
 		
 		arr[i] = data;
 	}
+	
+	public void remove(int i) {
+		if(i > size) new IndexOutOfBoundsException();
+		// Move all to the left
+		for (int j = i; j < size-1; j++) {
+			arr[j] = arr[j+1];
+		}
+		size--;
+	}
 }
