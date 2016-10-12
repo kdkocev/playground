@@ -1,6 +1,6 @@
 package DataStructs;
 
-public class Vector<T> {
+public class Vector<T> implements List{
 	int capacity = 10;
 	int size = 0;
 	T[] arr = (T[])new Object[capacity];
@@ -25,7 +25,7 @@ public class Vector<T> {
 		String str = "";
 		
 		for (int i = 0; i < size; i++) {
-			str = str + arr[i].toString() + "\n";
+			str = str + arr[i].toString() + " ";
 		}
 		
 		return str;
@@ -62,6 +62,14 @@ public class Vector<T> {
 		for (int j = i; j < size-1; j++) {
 			arr[j] = arr[j+1];
 		}
+		size--;
+	}
+	
+	public boolean empty() {
+		return size == 0;
+	}
+	
+	public void pop() {
 		size--;
 	}
 }
