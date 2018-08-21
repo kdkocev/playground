@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Grid 1</title>
+  <title>Grid 5</title>
   <style>
     body {
       font-family: arial;
@@ -13,13 +13,45 @@
       padding-top: 50px;
     }
 
+    .page-wrapper:after, .page-wrapper:before {
+      width: 1200px;
+      margin: 50px -60px;
+      content: "";
+      display: block;
+      border: 1px solid black;
+    }
+
     .container{
       display: flex;
+      flex-wrap: wrap;
+      flex-direction:column;
+      height: 600px;
+      align-items: flex-start;
     }
 
     .cell {
-      flex: 1;
+      flex-basis: 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
       padding: 20px;
+      box-sizing:border-box;
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+    }
+
+    .cell .content {
+      flex: 1;
+    }
+
+    .cell.large {
+      flex-basis: 100%;
+    }
+    .cell.large .content {
+      flex: 1;
+    }
+    .cell.wide {
+      width: 50%;
     }
     .content {
       background-color: #e4e6ed;
@@ -30,15 +62,22 @@
 <body>
   <div class="page-wrapper">
     <div class="container">
+      <div class="cell large wide">
+        <div class="content"></div>
+        <h2>Some heading</h2>
+        <div>Some example text explaining<br/> stuff that need explaining</div>
+      </div>
       <div class="cell">
         <div class="content"></div>
         <h2>Some heading</h2>
         <div>Some example text explaining stuff that need explaining</div>
-      </div><div class="cell">
+      </div>
+      <div class="cell">
         <div class="content"></div>
         <h2>Some heading</h2>
         <div>Some example text explaining stuff that need explaining</div>
-      </div><div class="cell">
+      </div>
+      <div class="cell">
         <div class="content"></div>
         <h2>Some heading</h2>
         <div>Some example text explaining stuff that need explaining</div>
