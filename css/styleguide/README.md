@@ -48,14 +48,20 @@ Several rules about grids:
 
 #### Simple grid example:
 
-![Grid 1](assets/grid_1.png)
+![Grid 1](assets/grid_1_1.png)
 
 So how is this grid constructed?
 
-![Grid 1 highlighted](assets/grid_1_highlighted.png)
+![Grid 1 highlighted](assets/grid_1_1_highlighted.png)
 
 We can see in the highlighted image that cells have no space between them despite that the gray boxes in the first image have some white space between them. This is because a cell should only wrap its contents and not style them. Note that this space between the gray boxes is made using `padding` in the cells rather than `margin` between the cells.
-You can find the code [here](examples/grid)
+You can find the code [here](examples/grid/grid_1_1.html)
+
+If you want to - you can have grids with an odd number of columns like this:
+
+![Grid 1 2](assets/grid_1_2.png)
+
+Code can be found [here](examples/grid/grid_1_2.html)
 
 #### Wrapped grid example:
 
@@ -70,11 +76,11 @@ In order to create a wrapped grid you should have several things in mind:
 
 ##### Common mistake 1:
 
-Using `flex-basis:1;` (relative fraction) instead of `flex-basis: 25%;` (relative percent)
+Using `flex-basis:1;` (relative fraction) instead of `flex-basis: 25%;` (relative percent) will lead to the following:
 
 ![Grid 2 mistake 1](assets/grid_2_mistake_1.png)
 
-Using `flex-grow: 1;` instead of `flex-grow:0;`. (here we correctly use `flex-basis:25%`)
+Using `flex-grow: 1;` instead of `flex-grow:0;`. (here we correctly use `flex-basis:25%`) will result in the following:
 
 ![Grid 2 mistake 2](assets/grid_2_mistake_2.png)
 
@@ -130,9 +136,25 @@ Code can be found [here](examples/grid/grid_5.html)
 
 #### Grid with spread cells
 
+![Grid 6 1](assets/grid_6_1.png)
+
+**Note** that the cells in this example do not "touch":
+
+![Grid 6 1 highlighted](assets/grid_6_1_highlighted.png)
+
+Code can be found [here](examples/grid/grid_6_1.html)
+
+This type of grids have a strange side effects when wrapping with less cells than can be contained.
+
+![Grid 6 2](assets/grid_6_2.png)
+
+#### Grids that are not rectangular
+
+// TODO
 
 ### Aligning grids on top of each other minding the padding
 
+// TODO
 
 ## Forms
 
