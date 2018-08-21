@@ -19,7 +19,7 @@
 
 // TODO .parent > .child > div
 
-## Grid
+## Grid using "CSS Flex"
 
 We use grids to create the entire layout of our page. Every page can be separated to a grid of nested rectangles. No matter how curvy the design is - it can always be described using rectangular shapes (if you do not agree please see [Multivariable Calculus](http://tutorial.math.lamar.edu/Classes/CalcIII/DoubleIntegrals.aspx))
 
@@ -55,13 +55,13 @@ So how is this grid constructed?
 ![Grid 1 highlighted](assets/grid_1_1_highlighted.png)
 
 We can see in the highlighted image that cells have no space between them despite that the gray boxes in the first image have some white space between them. This is because a cell should only wrap its contents and not style them. Note that this space between the gray boxes is made using `padding` in the cells rather than `margin` between the cells.
-You can find the code [here](examples/grid/grid_1_1.html)
+You can find the code [here](examples/grid_flex/grid_1_1.html)
 
 If you want to - you can have grids with an odd number of columns like this:
 
 ![Grid 1 2](assets/grid_1_2.png)
 
-Code can be found [here](examples/grid/grid_1_2.html)
+Code can be found [here](examples/grid_flex/grid_1_2.html)
 
 #### Wrapped grid example:
 
@@ -111,7 +111,7 @@ This is sometimes the desired behavior:
 
 ![Grid 2 mistake 6](assets/grid_2_mistake_6.png)
 
-You can find the code and play around with it [here](examples/grid/grid_2.html)
+You can find the code and play around with it [here](examples/grid_flex/grid_2.html)
 
 #### Uneven grid
 
@@ -126,19 +126,19 @@ You can even do a grid like the following:
 
 ![Grid 4](assets/grid_4.png)
 
-Yes this is a grid and note that we haven't changed the html at all. All the cells are in the same container like before. You can see the code [here](examples/grid/grid_4.html)
+Yes this is a grid and note that we haven't changed the html at all. All the cells are in the same container like before. You can see the code [here](examples/grid_flex/grid_4.html)
 
 You can even do something like this:
 
 ![Grid 5](assets/grid_5.png)
 
-Code can be found [here](examples/grid/grid_5.html)
+Code can be found [here](examples/grid_flex/grid_5.html)
 
 You can have a grid that doesn't even look like a grid:
 
 ![Grid 6](assets/grid_6.png)
 
-Code can be found [here](examples/grid/grid_6.html)
+Code can be found [here](examples/grid_flex/grid_6.html)
 
 #### Grid with spread cells
 
@@ -148,7 +148,7 @@ Code can be found [here](examples/grid/grid_6.html)
 
 ![Grid 7 1 highlighted](assets/grid_7_1_highlighted.png)
 
-Code can be found [here](examples/grid/grid_7_1.html)
+Code can be found [here](examples/grid_flex/grid_7_1.html)
 
 This type of grids have a strange side effects when wrapping with less cells than can be contained.
 
@@ -163,6 +163,10 @@ This type of grids have a strange side effects when wrapping with less cells tha
 // TODO
 
 ### Aligning grids on top of each other minding the padding
+
+// TODO
+
+## Grid using "CSS Grid"
 
 // TODO
 
