@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grid 5</title>
+  <style>
+    body {
+      font-family: arial;
+      margin: 0;
+    }
+    .page-wrapper {
+      width: 1080px;
+      margin: auto;
+      padding-top: 50px;
+    }
+
+    .container{
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .cell {
+      flex-basis: 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .cell.wider {
+      flex-basis: 100%;
+    }
+
+    .cell.wide {
+      flex-basis: 60%;
+    }
+
+    .cell.narrow {
+      flex-basis: 40%;
+    }
+
+    .content {
+      background-color: #e4e6ed;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <div class="cell wider">
+        <div class="content"></div>
+      </div>
+      <div class="cell wide">
+        <div class="content"></div>
+      </div>
+      <div class="cell narrow">
+        <div class="content"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

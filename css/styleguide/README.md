@@ -134,19 +134,25 @@ You can even do something like this:
 
 Code can be found [here](examples/grid/grid_5.html)
 
+You can have a grid that doesn't even look like a grid:
+
+![Grid 6](assets/grid_6.png)
+
+Code can be found [here](examples/grid/grid_6.html)
+
 #### Grid with spread cells
 
-![Grid 6 1](assets/grid_6_1.png)
+![Grid 7 1](assets/grid_7_1.png)
 
 **Note** that the cells in this example do not "touch":
 
-![Grid 6 1 highlighted](assets/grid_6_1_highlighted.png)
+![Grid 7 1 highlighted](assets/grid_7_1_highlighted.png)
 
-Code can be found [here](examples/grid/grid_6_1.html)
+Code can be found [here](examples/grid/grid_7_1.html)
 
 This type of grids have a strange side effects when wrapping with less cells than can be contained.
 
-![Grid 6 2](assets/grid_6_2.png)
+![Grid 7 2](assets/grid_7_2.png)
 
 #### Grids that are not rectangular
 
