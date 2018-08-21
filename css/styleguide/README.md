@@ -154,6 +154,10 @@ This type of grids have a strange side effects when wrapping with less cells tha
 
 ![Grid 7 2](assets/grid_7_2.png)
 
+#### Grids with even width and height cells
+
+//TODO
+
 #### Grids that are not rectangular
 
 // TODO
@@ -164,6 +168,8 @@ This type of grids have a strange side effects when wrapping with less cells tha
 
 ## Forms
 
+// TODO
+
 ## Images
 
 // `background-image` vs `<img/>`
@@ -172,11 +178,17 @@ This type of grids have a strange side effects when wrapping with less cells tha
 
 // Working with position fixed/absolute/relative. When not to.
 
+## Popups/Modals/Tooltips the right way
+
+// TODO
+
 ## Centering elements
 
 // how to put something in the center of an element. Insights into margin: auto, position: absolute, negative margins. how to make modals and so on...
 
 ## Symbols in css > + ~ etc.
+
+// TODO
 
 ## Custom shapes
 
@@ -187,6 +199,8 @@ This type of grids have a strange side effects when wrapping with less cells tha
 // Good practices with reference to HackSoft react styleguide
 
 ## General good practices
+
+// TODO
 
 ## General bad practices
 
