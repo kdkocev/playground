@@ -4,6 +4,8 @@
 
 // TODO relative and static units
 
+### Good practices
+
 ### Bad practices
 
 - Including relative units when working with static units
@@ -42,20 +44,44 @@ Several rules about grids:
 
 ### Example
 
-Simple grid example:
+#### Simple grid example:
 
+![Grid 1](assets/grid_1.png)
 
+So how is this grid constructed?
+
+![Grid 1 highlighted](assets/grid_1_highlighted.png)
+
+You can find the code [here](examples/grid_1)
+
+#### Wrapped grid example:
+
+// TODO
 
 ## Forms
 
+## Images
+
+// `background-image` vs `<img/>`
+
+## The `position:` drama 
+
+// Working with position fixed/absolute/relative. When not to.
+
+## Centering elements
+
+// how to put something in the center of an element. Insights into margin: auto, position: absolute, negative margins. how to make modals and so on...
+
+## Custom shapes
+
+// arrows made with borders, elipses, strange squares, donuts etc.
+
 ## CSS in React
 
-## Bad practices
+// Good practices with reference to HackSoft react styleguide
 
-`Rules are meant to be broken`
+## General good practices
 
-Every rule has it's exceptions and places where it should not be strictly followed.
+## General bad practices
 
 - Using `important` when overwriting a non-static class.
-
-## Good practices
