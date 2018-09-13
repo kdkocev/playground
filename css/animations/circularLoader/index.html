@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+    .loader-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loader {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .loader .circular-loader {
+      animation: loaderRotate 2s linear infinite;
+      transform-origin: center center;
+    }
+
+    .loader .circular-loader .loader-path {
+      stroke-dasharray: 150, 200;
+      stroke-dashoffset: -10;
+      animation: loaderDash 1.5s ease-in-out infinite,
+        loaderColor 6s ease-in-out infinite;
+      stroke-linecap: round;
+    }
+
+    @keyframes loaderRotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes loaderDash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+      }
+    }
+    @keyframes loaderColor {
+      0% {
+        stroke: green;
+      }
+      25% {
+        stroke: yellow;
+      }
+      50% {
+        stroke: orange;
+      }
+      75% {
+        stroke: red;
+      }
+      95% {
+        stroke: blue;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader">
+      <svg class="circular-loader" viewBox="25 25 50 50">
+        <circle
+          class="loader-path"
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+          stroke="#119d5f"
+          strokeWidth="3"
+        />
+      </svg>
+    </div>
+  </div>
+</body>
+</html>
