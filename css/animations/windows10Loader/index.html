@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #005a9c;
+      color: white;
+    }
+    .loader-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .loader {
+      width: 60px;
+      height: 60px;
+      position: relative;
+    }
+    .dot-swing {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation: swing 1.4s linear infinite;
+    }
+    .dot-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      animation: rotate 1.4s linear infinite;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      background-color: white;
+      display: inline-block;
+    } 
+
+    .dot-swing:nth-child(1), .dot-swing:nth-child(1) .dot-container {
+      animation-delay: 0;
+    }
+    .dot-swing:nth-child(2), .dot-swing:nth-child(2) .dot-container {
+      animation-delay: 0.163s;
+    }
+    .dot-swing:nth-child(3), .dot-swing:nth-child(3) .dot-container {
+      animation-delay: 0.326s;
+    }
+    .dot-swing:nth-child(4), .dot-swing:nth-child(4) .dot-container {
+      animation-delay: 0.49s;
+    }
+    .dot-swing:nth-child(5), .dot-swing:nth-child(5) .dot-container {
+      animation-delay: 0.65s;
+    }
+    .dot-swing:nth-child(6), .dot-swing:nth-child(6) .dot-container {
+      animation-delay: 0.81s;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+    @keyframes swing {
+      0% {
+        transform: rotate(0);
+      }
+      5% {
+        transform: rotate(40deg);
+      }
+      15% {
+        transform: rotate(60deg);
+      }
+      85% {
+        transform: rotate(80deg);
+      }
+      95% {
+        transform: rotate(100deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+    @keyframes swing90deg {
+      0% {
+        transform: rotate(0);
+      }
+      5% {
+        transform: rotate(45deg);
+      }
+      10% {
+        transform: rotate(75deg);
+      }
+      90% {
+        transform: rotate(105deg);
+      }
+      95% {
+        transform: rotate(135deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader">
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+      <div class="dot-swing">
+        <div class="dot-container">
+          <div class="dot">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
