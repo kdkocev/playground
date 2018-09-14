@@ -5,6 +5,7 @@
   <style>
     body {
       height: 100vh;
+      margin: 0;
     }
     .loading {
       display: flex;
@@ -56,7 +57,7 @@
     }
 
 
-    @-webkit-keyframes forward-motion {
+    @keyframes forward-motion {
       25% {
         transform: scale(1);
         opacity: 1;
@@ -64,13 +65,13 @@
     }
 
 
-    @-webkit-keyframes fast-blink {
+    @keyframes fast-blink {
       50%{
         transform: scale(1);
         opacity: 1;
       }
     }
-    @-webkit-keyframes delayed-blink {
+    @keyframes delayed-blink {
       25% {
         transform: scale(1);
         opacity: 1;

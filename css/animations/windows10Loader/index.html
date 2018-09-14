@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <style type="text/css">
     body {
       margin: 0;
@@ -9,10 +10,17 @@
       background-color: #005a9c;
       color: white;
     }
+    .text {
+      font-size: 24px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 100;
+      margin-top: 15px;
+    }
     .loader-container {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       height: 100%;
     }
     .loader {
@@ -77,10 +85,10 @@
       0% {
         transform: rotate(0);
       }
-      5% {
+      10% {
         transform: rotate(40deg);
       }
-      15% {
+      20% {
         transform: rotate(60deg);
       }
       85% {
@@ -88,26 +96,6 @@
       }
       95% {
         transform: rotate(100deg);
-      }
-      100% {
-        transform: rotate(180deg);
-      }
-    }
-    @keyframes swing90deg {
-      0% {
-        transform: rotate(0);
-      }
-      5% {
-        transform: rotate(45deg);
-      }
-      10% {
-        transform: rotate(75deg);
-      }
-      90% {
-        transform: rotate(105deg);
-      }
-      95% {
-        transform: rotate(135deg);
       }
       100% {
         transform: rotate(180deg);
@@ -154,6 +142,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="text">
+      Restarting
     </div>
   </div>
 </body>
