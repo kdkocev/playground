@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      height: 100vh;
+      color: white;
+      font-family: sans-serif;
+    }
+    .progressbar-container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .progressbar {
+      width: 200px;
+      height: 30px;
+      border-radius: 6px;
+      border: 1px solid black;
+      position: relative;
+    }
+    .progressbar .progress {
+      background-color: #0093ff;
+      left: 0;
+      top:0;
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      overflow: hidden;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    .progressbar > .text {
+      width: 200px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: black;
+    }
+    .progressbar .progress > .text {
+      width: 200px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body onLoad="onload">
+  <div class="progressbar-container">
+    <div class="progressbar">
+      <div class="progress" style="width: 0%;">
+        <div class="text">
+          LOADING 50%
+        </div>
+      </div>
+      <div class="text">
+        LOADING 50%
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+      function addWidth() {
+        var pgbar = document.getElementsByClassName("progress")[0];
+        pgbar.style.width = (parseInt(pgbar.style.width) + 1) + "%";
+        
+        var texts = document.getElementsByClassName("text");
+        for(var j = 0; j<texts.length; j++) {
+          texts[j].innerHTML = "LOADING " + pgbar.style.width;
+        }
+      }
+      for(var i = 0; i < 100; i++) {
+        setTimeout('addWidth()', i*100);
+      }
+      
+  </script>
+</body>
+</html>
