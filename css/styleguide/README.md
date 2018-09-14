@@ -2,14 +2,49 @@
 
 ## Units
 
-// TODO relative and static units
+### Static
+
+Units that do not change with respect to the other elements on the page:
+- **px** - pixels
+- **cm** - centimeters
+- **in** - inches
+- **mm** - milimeters
+- **pt** - points = 1/72 of an inch
+- **pc** - picas = 12 points
+
+### Relative
+
+Units that change depending on their container or the browser window:
+- **%** - percent (100% - the entire space)
+- **em** - relative to the height of the font 1 em - the width of a capital letter M. Inheritence is taken into account
+- **vw** - viewport width - relative to a percentage of the width of the browser window
+- **vh** - viewport height - relative to a percentage of the height of the browser window
+- **vmin** - the smaller size comparing 1vw and 1vh
+- **vmax** - the larger size comparing 1vw and 1vh
+- **rem** - root em - the same as em for the default base font-size. Inheritence plays no role here.
+- **ex** - height of a lower-case letter x
+- **ch** - width of the number 0
+
+### Unitless values
+
+If you don't set a unit on  some css properties - the value you set acts as a multiplying factor.
+
+```
+line-height: 1.5;
+```
+
 
 ### Good practices
 
+It's a good practise to:
+- use only relative units when creating a component.
+- to work in `rem`s in your entire project. That way you can scale everything just by tweaking the root element's font-size.
+- to work in `em`s when writing a component that should have the ability to be scaled up or down.
+
 ### Bad practices
 
-- Including relative units when working with static units
-- Including static units when working with relative units
+It's a bad practise to:
+- mix static and relative units together when styling an element.
 
 ## Naming
 
@@ -188,6 +223,9 @@ This type of grids have a strange side effects when wrapping with less cells tha
 
 ## Centering elements
 
+The main concern when centering an element is that it has to be in the center no matter the parent width or height.
+Centering the element only on the horizontal plane is easy if you set `display: flex` with `margin: auto;`
+There are many ways in which you can achieve that. You can use `position: absolute;` with a negative margin. You can use `display:flex;` with `justify-content: center;` and `align-items: center;`. You can even use percentages to size your element 
 // how to put something in the center of an element. Insights into margin: auto, position: absolute, negative margins. how to make modals and so on...
 
 ## Symbols in css > + ~ etc.

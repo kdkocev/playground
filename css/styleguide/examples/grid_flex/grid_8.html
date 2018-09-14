@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Grid 7</title>
+  <title>Grid 8</title>
   <style>
     body {
       font-family: arial;
@@ -13,11 +13,20 @@
       padding-top: 50px;
     }
 
-    .container{
+    .container {
       display: grid;
-      grid-template-columns: 25% 25% 25% 25%;
-      grid-template-rows: repeat(100, 50%);
-      height: 540px;
+      grid-template-columns: repeat(4, 270px);
+      grid-template-rows: 270px;
+      grid-auto-rows: 270px;
+      grid-template-areas:
+        "one one one one"
+        "one one one one"
+    }
+
+    .container:after{
+      content: "";
+      display: block;
+      clear:both;
     }
 
     .cell {
