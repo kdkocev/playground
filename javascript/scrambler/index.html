@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <style type="text/css">
+    body{
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+      color: white;
+      font-size: 100px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="name">
+    </div>
+  </div>
+  <script type="text/javascript">
+
+    function showName(name) {
+      document.getElementById("name").innerHTML = name;
+    }
+
+    var names = [
+      'Kamen Kotsev',
+      'Rumen Kotsev',
+      'Slavyana Monkova',
+      'Rositsa Zlateva',
+      'Aleksandrina Aleksandrova',
+    ];
+
+    window.currentIndex = 0;
+    window.fps = 60;
+    window.refreshRate = Math.round(1000/window.fps);
+    function shuffle() {
+      window.currentIndex = parseInt(Math.round(Math.random() * (names.length - 1)));
+    }
+
+    function changeName() {
+      shuffle();
+      showName(names[window.currentIndex]);
+    }
+
+    function start_djurkane() {
+      window.interval = setInterval(changeName, window.refreshRate);
+    }
+
+    function stop_djurkane() {
+      clearInterval(window.interval);
+    }
+
+    const SPACE_KEY_CODE = 32;
+    document.addEventListener('keydown', (event) => {
+      const keyCode = event.which;
+      if(keyCode === SPACE_KEY_CODE) {
+        if(window.interval) {
+          stop_djurkane();
+        } else {
+          start_djurkane();
+        }
+      }
+    });
+
+    changeName();
+
+  </script>
+</body>
+</html>
