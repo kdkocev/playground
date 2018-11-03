@@ -33,15 +33,17 @@ const minus = n => m => m(pred)(n);
 
 // console.log(isZero(minus(Two)(One))(true)(false));
 
-const churchToInt = num => {
-  const f = x => {
-    if (typeof x === "function") {
-      return 2;
-    }
-    return x + 1;
-  };
-  return num(f)(0);
-};
+// const churchToInt = num => {
+//   const f = x => {
+//     if (typeof x === "function") {
+//       return 2;
+//     }
+//     return x + 1;
+//   };
+//   return num(f)(0);
+// };
+
+const churchToInt = num => num(x => x + 1)(0);
 
 // console.log(churchToInt(minus(Three)(plus(Three)(Three))));
 // console.log(a(fi)(0));
@@ -87,9 +89,9 @@ const numLte = n1 => n2 => bool.OR(numLt(n1)(n2))(numEqual(n1)(n2));
 */
 const divide = n1 => n2 =>
   combinators.Y(divide1 => current =>
-    numGte(current)(n2)(() => succ(divide1(minus(current)(n2))))(() => Zero)(
-      Zero
-    )
+    numGte(current)(n2)
+      (() => succ( divide1(minus(current)(n2)) ) )
+      (() => Zero)(Zero)
   )(n1);
 
 // console.log(churchToInt(divide(succ(succ(Four)))(Two)));
@@ -97,6 +99,22 @@ const divide = n1 => n2 =>
 const reminder = n1 => n2 => {}; //TODO
 
 const mod = n1 => n2 => {}; //TODO
+
+// const churchToIntTEST = num => {
+//   const f = x => {
+//     if (typeof x === "function") {
+//       return x(0);
+//     }
+//     return x + 1;
+//   };
+//   return num(f)(0);
+// };
+
+// console.log(churchToIntTEST(Four(Four)));
+
+const power = n1 => n2 => f => n2(n1)(f);
+
+// console.log(churchToInt(power(Four)(Three)));
 
 module.exports = {
   Zero,
