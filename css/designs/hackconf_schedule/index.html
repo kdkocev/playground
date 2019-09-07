@@ -50,16 +50,24 @@
     }
 
     .schedule-item.schedule-event {
-      width: 300px;
+      width: 350px;
       height: 80px;
     }
 
     .schedule-item.schedule-lecture {
       width: 500px;
-      background-color: #363636;
+      background-color: #fcfcfc;
+    }
+    .schedule-item.schedule-lecture + .schedule-lecture {
+      margin-left: 200px;
     }
 
-    .schedule-item__row {
+    .schedule-item.schedule-break {
+      width: 300px;
+      height: 60px;
+    }
+
+    .schedule-item-row {
       display: flex;
       justify-content: center;
       padding: 10px;
@@ -127,7 +135,7 @@
 
     <div class="schedlue-item-container">
       
-      <div class="schedule-item__row">
+      <div class="schedule-item-row">
         <div class="schedule-item schedule-event">
           <div class="schedule-item__hall">
             <div>Hall 1</div>
@@ -146,7 +154,7 @@
         </div>
       </div>
 
-      <div class="schedule-item__row">
+      <div class="schedule-item-row">
         <div class="schedule-item schedule-event">
           <div class="schedule-item__hall">
             <div>Hall 1</div>
@@ -166,7 +174,7 @@
       </div>
 
 
-      <div class="schedule-item__row">
+      <div class="schedule-item-row">
         <div class="schedule-item schedule-lecture">
           <div class="schedule-item__hall">
             <div>Hall 1</div>
@@ -179,7 +187,59 @@
               10:20 - 11:00
             </div>
             <div class="schedule-item__text__label">
-              Opening
+              Lecture 1
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+      <div class="schedule-item-row">
+        <div class="schedule-item schedule-break">
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedule-item__text__label">
+              Coffee break
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="schedule-item-row">
+        <div class="schedule-item schedule-lecture">
+          <div class="schedule-item__hall">
+            <div>Hall 1</div>
+          </div>
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedile-item__text__time">
+              11:10 - 12:00
+            </div>
+            <div class="schedule-item__text__label">
+              Lecture 2
+            </div>
+          </div>
+        </div>
+        <div class="schedule-item schedule-lecture">
+          <div class="schedule-item__hall">
+            <div>Hall 2</div>
+          </div>
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedile-item__text__time">
+              11:10 - 12:00
+            </div>
+            <div class="schedule-item__text__label">
+              Lecture 3
             </div>
           </div>
         </div>
