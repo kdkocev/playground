@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+
+  var c = document.getElementById("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+
+  var ctx = c.getContext("2d");
+  // ctx.moveTo(0, 0);
+  // ctx.lineTo(200, 100);
+  // ctx.stroke();
+
+  function Ball(x, y, velocity) {
+    this.x = x;
+    this.y = y;
+    this.velocity = velocity; // has x and y
+  }
+
+  var ball = new Ball(0, window.innerHeight, {x:10, y: -20});
+
+  var ballCoords = [];
+
+  function drawBalls() {
+    var afterimages = 20;
+    if(afterimages > ballCoords.length-1) {
+      afterimages = ballCoords.length-1
+    }
+
+    for (i=1; i<afterimages; i++) {
+      ctx.fillStyle="rgba(255,255,255,"+(1 - 0.1*i)+")";
+      drawBall(ballCoords[ballCoords.length - i])
+      ctx.fill()
+    }
+  }
+
+  function drawBall(ball) {
+
+    ctx.rect(ball.x, ball.y, 5, 5);
+  }
+
+  function calculateNewPosition(element, velocity, fps) {
+    // console.log(element, velocity)
+    var width = 40;//meters
+    var height = 40; // meters
+    var coefficientW = window.innerWidth / width;
+    var coefficientH = window.innerHeight / height;
+
+    var gravity = 10;
+
+    var vectorX = velocity.x;
+    var vectorY = velocity.y + gravity/fps;
+
+    // vectorY += (gravity * coefficientH);
+
+    var newX = element.x + ((vectorX * coefficientW)/fps);
+    var newY = element.y + ((vectorY * coefficientH)/fps);
+
+    var elasticity = 0.8;
+
+    // console.log(vectorY);
+    if(newY > window.innerHeight){
+      // newY = window.innerHeight;
+      // console.log(vectorY, vectorY * elasticity)
+      if(vectorY > 0) {
+        vectorY = -vectorY * elasticity;
+      }
+    }
+
+    if(newX > window.innerWidth) {
+      newX = window.innerWidth;
+      vectorX = -vectorX * elasticity;
+    }
+
+    if(newX < 0) {
+      newX = 0;
+      vectorX = -vectorX * elasticity;
+    }
+
+    if(newY < 0) {
+      newY = 0;
+      vectorY = -vectorY * elasticity;
+    }
+
+    // console.log(vectorY, element.y)
+    // if(element.y == newY) {
+    //   vectorX = 0;
+    //   vectorY = 0;
+    // }
+
+
+    var newObj = {
+      x: newX,
+      y: newY,
+      velocity: {
+        x: vectorX,
+        y: vectorY
+      }
+    }
+
+    ballCoords[ballCoords.length] = newObj;
+
+    return newObj;
+  }
+
+  // drawBall(ball);
+
+  var fps = 30;
+  setInterval(draw, 1000/fps);
+
+  // ctx.strokeStyle = "rgb(255, 255, 255)";
+  function draw() {
+    ctx.beginPath();
+    ctx.clearRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "rgba(0, 0, 0, 1)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    move();
+    // ctx.fillStyle = "rgba(255, 255, 255, 1)";
+    // drawBall(ball);
+    drawBalls();
+    ctx.fill();
+    // ctx.stroke();
+  }
+
+  function move() {
+    newPosition = calculateNewPosition(ball, ball.velocity, fps);
+    // console.log(newPosition)
+    ball.x = newPosition.x;
+    ball.y = newPosition.y;
+    ball.velocity = newPosition.velocity;
+  }
+
+</script>
+</html>
