@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .container {
+      width: 920px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-row-gap: 10px;
+    }
+    .month {
+      display: grid;
+      grid-template-columns: repeat(31, 20px);
+      grid-template-rows: 20px;
+      grid-column-gap: 10px;
+    }
+    .month div {
+      border: 1px solid orange;
+      color: #222;
+      line-height: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  </div>
+
+  <script type="text/javascript">
+
+    // Not used atm
+    function addDays(date, days) {
+      var result = new Date(date);
+      result.setDate(result.getDate() + days);
+      return result;
+    }
+
+    // Not used atm
+    function formatDate(date) {
+      var monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
+
+      var day = date.getDate();
+      var monthIndex = date.getMonth();
+      var year = date.getFullYear();
+
+      return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+
+
+    var monthsLength = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    var container = document.getElementsByClassName("container")[0];
+
+    for(var i = 0; i < 12; i++) {
+      var node = document.createElement("div")
+      node.classList.add("month");
+
+      for(var k=0; k < monthsLength[i]; k++) {
+        var div = document.createElement("div");
+        var text = document.createTextNode(k + 1)
+        div.appendChild(text);
+        node.appendChild(div);
+      }
+
+      container.appendChild(node);
+    }
+
+    console.log(addDays(new Date(), 1))
+    console.log(addDays(new Date(), -1))
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    body {
+      background-color: black;
+      margin: 200px;
+    }
+    .screenContainer {
+      padding: 10px;
+      border: 2px solid white;
+      height: 100px;
+      width: 200px;
+      display: flex;
+      position: relative;
+    }
+    .coloredBar {
+      width: 10px;
+      height: 100%;
+      background: linear-gradient(red, yellow, green);
+    }
+    .blackBarContainer {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 200px;
+      height: 100px;
+    }
+    .blackBar {
+      position: absolute;
+      top: 0;
+      height:100%;
+      width: 10px;
+      animation-timing-function:linear;
+      background-color: black;
+      animation-iteration-count: infinite;
+      animation-duration: 0.8s;
+    }
+    .blackBarContainer .blackBar:nth-child(1) {
+      left: 0;
+      animation-name: jumpOne;
+    }
+    .blackBarContainer .blackBar:nth-child(2) {
+      left: 10px;
+      animation-name: jumpTwo;
+    }
+    .blackBarContainer .blackBar:nth-child(3) {
+      left: 20px;
+      animation-name: jumpThree;
+    }
+    .blackBarContainer .blackBar:nth-child(4) {
+      left: 30px;
+      animation-name: jumpFour;
+    }
+    .blackBarContainer .blackBar:nth-child(5) {
+      left: 40px;
+      animation-name: jumpFive;
+    }
+    .blackBarContainer .blackBar:nth-child(6) {
+      left: 50px;
+      animation-name: jumpSix;
+    }
+    .blackBarContainer .blackBar:nth-child(7) {
+      left: 60px;
+      animation-name: jumpSeven;
+    }
+    .blackBarContainer .blackBar:nth-child(8) {
+      left: 70px;
+      animation-name: jumpEight;
+    }
+    .blackBarContainer .blackBar:nth-child(9) {
+      left: 80px;
+      animation-name: jumpNine;
+    }
+    .blackBarContainer .blackBar:nth-child(10) {
+      left: 90px;
+      animation-name: jumpTen;
+    }
+    @keyframes jumpOne {
+      30% {
+        height: 98%;
+      }
+    }
+    @keyframes jumpTwo {
+      40% {
+        height: 80%;
+      }
+    }
+    @keyframes jumpThree {
+      50% {
+        height: 60%;
+      }
+    }
+    @keyframes jumpFour {
+      80% {
+        height: 50%;
+      }
+    }
+    @keyframes jumpFive {
+      50% {
+        height: 5%;
+      }
+    }
+    @keyframes jumpSix {
+      10% {
+        height: 10%;
+      }
+      40% {
+        height: 30%;
+      }
+      90% {
+        height: 10%;
+      }
+    }
+    @keyframes jumpSeven {
+      80% {
+        height: 35%;
+      }
+    }
+    @keyframes jumpEight {
+      60% {
+        height: 60%;
+      }
+    }
+    @keyframes jumpNine {
+      80% {
+        height: 80%;
+      }
+    }
+    @keyframes jumpTen {
+      70% {
+        height: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="screenContainer">
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    <div class="coloredBar"></div>
+    
+    <div class="blackBarContainer">
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+      <div class="blackBar"></div>
+    </div>
+  </div>
+</body>
+</html>
