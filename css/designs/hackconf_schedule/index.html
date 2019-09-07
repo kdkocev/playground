@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      font-family: Arial;
+      background-color: #ebebeb;
+    }
+
+    .schedule-container {
+      padding-top: 20px;
+    }
+
+    .schedule-container__tabs {
+      margin: auto;
+      display: grid;
+      grid-template-columns: 140px 140px 140px;
+      grid-template-rows: 1fr;
+      grid-column-gap: 5px;
+      width: 435px;
+    }
+
+    .schedule-container__tabs__tab {
+      height: 40px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 40px;
+      background-color: #ff9900;
+      border: 1px solid #ff9900;
+    }
+
+    .schedule-container__tabs__tab.active {
+      background-color: white;
+      border: 1px solid #ff9900;
+    }
+    
+    .schedlue-item-container {
+      padding-top: 40px;
+    }
+
+    .schedule-item {
+      border-radius: 8px;
+      border: 1px solid #ff9900;
+      background-color: white;
+      display: flex;
+    }
+
+    .schedule-item.schedule-event {
+      width: 300px;
+      height: 80px;
+    }
+
+    .schedule-item.schedule-lecture {
+      width: 500px;
+      background-color: #363636;
+    }
+
+    .schedule-item__row {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .schedule-item__hall {
+      height: 100%;
+      width: 35px;
+      background-color: #ff9900;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+
+    .schedule-item__hall div {
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+      margin-left: 8px;
+      height: 80px;
+      transform: rotate(180deg);
+    }
+
+    .schedule-item__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    .schedule-item__image img {
+      width: 40px;
+    }
+
+    .schedule-item__text {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 20px;
+      font-size: 20px;
+    }
+
+    .schedule-item__text__label {
+      font-weight: bold;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="schedule-container">
+    <div class="schedule-container__tabs">
+      <div class="schedule-container__tabs__tab">
+        Workshops
+      </div>
+      <div class="schedule-container__tabs__tab active">
+        Day 1
+      </div>
+      <div class="schedule-container__tabs__tab">
+        Day 2
+      </div>
+    </div>
+
+    <div class="schedlue-item-container">
+      
+      <div class="schedule-item__row">
+        <div class="schedule-item schedule-event">
+          <div class="schedule-item__hall">
+            <div>Hall 1</div>
+          </div>
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedile-item__text__time">
+              09:00 - 10:20
+            </div>
+            <div class="schedule-item__text__label">
+              Registration
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-item__row">
+        <div class="schedule-item schedule-event">
+          <div class="schedule-item__hall">
+            <div>Hall 1</div>
+          </div>
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedile-item__text__time">
+              10:20 - 11:00
+            </div>
+            <div class="schedule-item__text__label">
+              Opening
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="schedule-item__row">
+        <div class="schedule-item schedule-lecture">
+          <div class="schedule-item__hall">
+            <div>Hall 1</div>
+          </div>
+          <div class="schedule-item__image">
+            <img src="https://cataas.com/cat?width=100" />
+          </div>
+          <div class="schedule-item__text">
+            <div class="schedile-item__text__time">
+              10:20 - 11:00
+            </div>
+            <div class="schedule-item__text__label">
+              Opening
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div>
+  </div>
+</body>
+</html>
