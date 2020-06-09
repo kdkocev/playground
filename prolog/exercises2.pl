@@ -45,3 +45,6 @@ without([X|L], X, R):-without(L, X, R).
 
 mysort([], []).
 mysort(L, [H|R]):-member(H, L), min(H, L).
+
+reverse([],[]).
+reverse([H|T], L):-append2([X,[H]], L), reverse(T, X).
