@@ -23,6 +23,10 @@ public:
         }
     }
 
+    ~ArrayList() {
+        delete [] a;
+    }
+
     void add(T n) {
         if (size == capacity) {
             resize();
