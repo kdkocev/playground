@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Paste Demo</title>
+</head>
+<body>
+  <h2>Paste Excel Data Here:</h2>
+  <div id="pasteArea" contenteditable="true" style="border: 1px solid #ccc; padding: 10px; width: 300px; height: 200px; overflow: auto;"></div>
+  <h2>Table will appear below:</h2>
+  <div id="output"></div>
+
+  <script>
+    document.getElementById('pasteArea').addEventListener('paste', function(e) {
+      // Prevent the default paste action
+      e.preventDefault();
+
+      // Get the pasted data via clipboard API
+      const pasteData = e.clipboardData || window.clipboardData;
+      const text = pasteData.getData('text');
+
+      // Split the text into rows and cells
+      const rows = text.trim().split(/\r?\n/);
+      const table = document.createElement('table');
+      table.style.borderCollapse = "collapse";
+
+      rows.forEach(function(row) {
+        const tr = document.createElement('tr');
+        row.split('\t').forEach(function(cell) {
+          const td = document.createElement('td');
+          td.textContent = cell;
+          td.style.border = "1px solid black";
+          td.style.padding = "5px";
+          tr.appendChild(td);
+        });
+        table.appendChild(tr);
+      });
+
+      // Append the constructed table to the output div
+      document.getElementById('output').innerHTML = '';
+      document.getElementById('output').appendChild(table);
+    });
+  </script>
+</body>
+</html>
