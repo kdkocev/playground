@@ -7,6 +7,7 @@ interface TreeNode<T> {
   value:T,
   left?: TreeNode<T>,
   right?: TreeNode<T>
+  // Fixing a bug
 }
 
 function invertTree<T>(node: TreeNode<T>) {
