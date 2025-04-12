@@ -61,3 +61,42 @@ import dayjs from "dayjs";
 
   console.log(value1);
 }
+
+{
+  type OneNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+  type Year = `20${Day}`;
+  type Month =
+    | "01"
+    | "02"
+    | "03"
+    | "04"
+    | "05"
+    | "06"
+    | "07"
+    | "08"
+    | "09"
+    | "10"
+    | "11"
+    | "12";
+  type Day =
+    | `0${OneNum}`
+    | "10"
+    | `1${OneNum}`
+    | "20"
+    | `2${OneNum}`
+    | "30"
+    | "31";
+
+  // Note: The "string &" is required only for the type error to state:
+  // Argument of type "2025-10-40" is not assignable to parameter of type 'DateStringLiteral'
+  // Without the "string &" the error reads: Argument ... to parameter of type "2001-01-01" | "2001-01-02" | ... "2031-12-31";
+  type DateStringLiteral = string & `${Year}-${Month}-${Day}`;
+
+  // Note: Ofcorse this type permits us to have the 31st of February as a proper date. We need to be more specific to capture that case as well.
+
+  function checkDate(date: DateStringLiteral) {}
+
+  checkDate("2024-02-10");
+  // checkDate("2025-02-40"); // Type Error
+  // checkDate("2025-02-04 20:40:11+03:00T"); // Type Error
+}
